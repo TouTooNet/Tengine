@@ -57,6 +57,9 @@ RUN cd tengine-2.1.2 && ./configure --add-module=/home/lua-nginx-module-0.9.16rc
 # add tengine user
 RUN adduser --disabled-login --gecos 'Tengine' nginx
 
+# create tengine logs dir
+RUN mkdir -p /usr/local/nginx/nginx_logs
+
 # port
 EXPOSE 80
 EXPOSE 443
