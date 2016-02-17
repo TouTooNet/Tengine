@@ -65,12 +65,11 @@ EXPOSE 80
 EXPOSE 443
 
 # clear aptlist & home/files
-RUN rm -rf /var/lib/apt/lists/*
-RUN rm -rf /home/*
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /home/*
 
 # RUN TENGINE
 ADD run.sh /home/run.sh
 RUN chmod 755 *.sh
 
-CMD ["run.sh"]
+CMD ["./run.sh"]
 

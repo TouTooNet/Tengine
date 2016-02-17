@@ -12,12 +12,12 @@ read Arg
 
 case $Arg in
 	start)
-		docker run -h="tengine" --name tengine -d -i -t -p 80:80 -p 443:443 -v /root/docker-data/tengine/conf/:/usr/local/nginx/conf/ -v /root/docker-data/tengine/logs:/usr/local/nginx/nginx_logs tengine /bin/bash
+		docker run -h="tengine" --name tengine -d -i -t -p 80:80 -p 443:443 -v /root/docker-data/tengine/conf/:/usr/local/nginx/conf/ -v /root/docker-data/tengine/logs:/usr/local/nginx/nginx_logs simman/tengine 
 	;;
 	restart)
 		docker stop tengine
 		docker rm tengine
-		docker run -h="tengine" --name tengine -d -i -t -p 80:80 -p 443:443 -v /root/docker-data/tengine/conf/:/usr/local/nginx/conf/ -v /root/docker-data/tengine/logs:/usr/local/nginx/nginx_logs tengine /bin/bash
+		docker run -h="tengine" --name tengine -d -i -t -p 80:80 -p 443:443 -v /root/docker-data/tengine/conf/:/usr/local/nginx/conf/ -v /root/docker-data/tengine/logs:/usr/local/nginx/nginx_logs simman/tengine 
 	;;
 	stop)
 		docker stop tengine
