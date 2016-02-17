@@ -64,8 +64,9 @@ RUN mkdir -p /usr/local/nginx/nginx_logs
 EXPOSE 80
 EXPOSE 443
 
-# clear aptlist
+# clear aptlist & home/files
 RUN rm -rf /var/lib/apt/lists/*
+RUN rm -rf /home/*
 
 # RUN TENGINE
 ADD run.sh /home/run.sh
