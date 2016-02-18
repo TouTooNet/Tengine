@@ -1,0 +1,13 @@
+language: bash
+
+sudo: true
+
+install:
+  - curl -sLo - http://j.mp/install-travis-docker | sh -xe
+
+script:
+  - df -h
+  - ./run docker info
+  - ./run docker build -t="tengine" .
+  - ./run docker info
+  - df -h
