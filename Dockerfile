@@ -15,9 +15,6 @@ ENV   LC_ALL en_US.UTF-8
 RUN locale-gen $LANGUAGE && \
     dpkg-reconfigure locales
 
-# Update apt source
-ADD sources.list /etc/apt/
-
 # Base build 
 RUN apt-get update
 RUN apt-get -y upgrade
@@ -154,7 +151,4 @@ RUN apt-get clean all && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /home/*
 # port
 EXPOSE 80 443
 
-ADD run.sh /home/run.sh
-RUN chmod 775 /home/run.sh
-
-CMD ["/home/run.sh"]
+CMD ["nginx", "-g", "daemon off;"]
