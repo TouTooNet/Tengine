@@ -1,4 +1,4 @@
-# Tengine Aliyun
+# Tengine Aliyun [![Build Status](https://api.travis-ci.org/TouTooNet/Tengine.svg?branch=master)](https://travis-ci.org/TouTooNet/Tengine)
 
 > Tengine 的镜像
 
