@@ -151,7 +151,4 @@ RUN apt-get clean all && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /home/*
 # port
 EXPOSE 80 443
 
-ADD run.sh /home/run.sh
-RUN chmod 775 /home/run.sh
-
-CMD ["/home/run.sh"]
+CMD ["nginx", "-g", "daemon off;"]

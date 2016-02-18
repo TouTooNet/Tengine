@@ -1,0 +1,11 @@
+language: bash
+sudo: true
+services:
+  - docker
+before_install: 
+  - docker build -t="tengine" .
+  - docker run -d -p 80:80 tengine
+  - docker ps -a
+  - docker info
+script:
+  - curl -I http://localhost
