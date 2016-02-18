@@ -64,14 +64,6 @@ RUN wget http://luajit.org/download/LuaJIT-2.0.4.tar.gz
 RUN tar zxvf LuaJIT-2.0.4.tar.gz
 RUN cd LuaJIT-2.0.4 && make && make install
 
-# install ngx_devel_kit
-RUN wget https://github.com/simpl/ngx_devel_kit/archive/v0.2.19.tar.gz
-RUN tar xzvf v0.2.19.tar.gz
-
-# ngx_lua
-RUN wget https://github.com/openresty/lua-nginx-module/archive/v0.9.16rc1.tar.gz
-RUN tar xzvf v0.9.16rc1.tar.gz
-
 # set env
 ENV LUAJIT_LIB=/usr/local/lib
 ENV LUAJIT_INC=/usr/local/include/luajit-2.0
