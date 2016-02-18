@@ -15,9 +15,6 @@ ENV   LC_ALL en_US.UTF-8
 RUN locale-gen $LANGUAGE && \
     dpkg-reconfigure locales
 
-# Update apt source
-ADD sources.list /etc/apt/
-
 # Base build 
 RUN apt-get update
 RUN apt-get -y upgrade
