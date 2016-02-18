@@ -1,4 +1,3 @@
 #!/bin/bash
-
-/usr/local/nginx/sbin/nginx
+nginx 
 /bin/bash
