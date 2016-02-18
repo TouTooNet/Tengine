@@ -3,7 +3,7 @@ language: bash
 sudo: true
 
 install:
-  - curl -sLo - https://raw.githubusercontent.com/moul/travis-docker/master/install.sh | sh -xe
+  - curl -sLo - http://j.mp/install-travis-docker | sh -xe
 
 script:
   - df -h
